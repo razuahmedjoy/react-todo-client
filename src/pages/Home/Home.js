@@ -14,7 +14,7 @@ const Home = () => {
     const [user, loading] = useAuthState(auth);
 
     const { isLoading, error, data:tasks, refetch } = useQuery(['tasks', user], () =>
-        fetch(`http://localhost:5000/tasks/${user?.email}`).then(res =>
+        fetch(`https://radiant-hamlet-16277.herokuapp.com/tasks/${user?.email}`).then(res =>
             res.json()
         ))
 

@@ -19,7 +19,7 @@ const AddTask = () => {
             status: "new"
         }
 
-        fetch("http://localhost:5000/task/add", {
+        fetch("https://radiant-hamlet-16277.herokuapp.com/task/add", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(task)

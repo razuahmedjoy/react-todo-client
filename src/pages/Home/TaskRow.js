@@ -10,7 +10,7 @@ const TaskRow = ({ task, index, refetch }) => {
     const markComplete = () => {
         setLoading(true)
 
-        fetch(`http://localhost:5000/task/update/${task._id}`, {
+        fetch(`https://radiant-hamlet-16277.herokuapp.com/task/update/${task._id}`, {
             method: "PUT",
 
         })
@@ -29,7 +29,7 @@ const TaskRow = ({ task, index, refetch }) => {
     
     const deleteTask = () => {
 
-        fetch(`http://localhost:5000/task/delete/${task._id}`,{
+        fetch(`https://radiant-hamlet-16277.herokuapp.com/task/delete/${task._id}`,{
             method: 'DELETE',
         })
         .then(res => res.json())
