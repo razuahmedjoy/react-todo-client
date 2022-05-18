@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../partials/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 
@@ -39,10 +40,14 @@ const Login = () => {
 
     let signInError;
 
+    if(error) {
+        signInError = <p className="text-red-500 mb-3">{error.message}</p>
+    }
+
 
 
     const onSubmit = (data) => {
-        console.log(data);
+        // console.log(data);
         signInWithEmailAndPassword(data.email, data.password);
     }
 
@@ -132,6 +137,7 @@ const Login = () => {
                     {/* react form hooks */}
 
                     <div className="divider">OR</div>
+                    <SocialLogin />
 
                 </div>
             </div>
